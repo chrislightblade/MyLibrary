@@ -70,7 +70,7 @@ public class LibreriaMetodiArray {
 
         /*for(int i = 0; (i+1) < persona.length; i++){        più leggero da scrivere
             if(persone[i].compareTo(persone[i+1]) > 0){
-                tmp = persone[i];
+                Comparable tmp = persone[i];
                 persone [i] = persone[i+1];
                 persone[i+1] = tmp;
                 i = 0;
