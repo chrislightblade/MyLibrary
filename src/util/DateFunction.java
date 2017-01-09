@@ -49,7 +49,7 @@ public class DateFunction {
         return giorni;
     }
 
-    public String contatempo(int secondi) {
+    public static String contatempo(int secondi) {
         String report = "";
         int giorni =(int) Math.floor(secondi / 86400);
         int secondi_resto = secondi - giorni * 86400;
@@ -63,6 +63,17 @@ public class DateFunction {
         report += secondi_resto + "/ ";
         return report;
         
+    }
+    
+    public static int cambioInSecondi(Date data1, Date data2){
+        int secondiTot = 0;
+        secondiTot += (data2.getDay() - data1.getDay()) * 84600;
+        secondiTot += ( DateFunction.giorniInMese(data2.getMonth()) -  DateFunction.giorniInMese(data1.getMonth())) * 84600;
+        secondiTot += data2.getSeconds()- data1.getSeconds();
+        secondiTot += (data2.getMinutes() - data1.getMinutes()) * 60;
+        secondiTot += (data2.getHours() - data1.getHours()) * 3600;
+        
+        return secondiTot;
     }
 
 }
